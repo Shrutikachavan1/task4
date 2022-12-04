@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/nav.ejs')%>
+    <h3 class="text-center">All Clothes</h3>
+    <div class="row container g-2 g-lg-3">
+        <% for(let p of prods) {%>
+  
+        <div class="card g-2 g-lg-3 px-2" style="width: 18rem">
+          <img class="card-img-top" src="<%= p.img%>" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title"><%= p.name%></h5>
+            <p class="card-text">₹ <%= p.quantity%></p>
+            <p class="card-text">₹ <%= p.price%></p>
+            <p class="card-text"><%= p.description%></p>
+            <a href="/updateproduct" class="btn btn-primary"
+              >edit</a>
+            <a href="/delete/<%=p._id %>" class="btn btn-primary">delete</a>
+          </div>
+        </div>
+        <% } %>
+      </div>
+</body>
+</html>
