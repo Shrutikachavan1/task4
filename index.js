@@ -15,7 +15,7 @@ app.use('/product',productRoute)
 app.set("view engine", "ejs");
 app.set("views","./views");
 //To create Database
-const db=mongoose.connect('mongodb://localhost:27017/myproducts',{
+const db=mongoose.connect('mongodb://localhost:27017/MVC_crud',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 },(err)=>{
@@ -32,7 +32,7 @@ const db=mongoose.connect('mongodb://localhost:27017/myproducts',{
 // })
 
 app.get('/',(req,res)=>{
-    res.render("index",{products:""})
+    res.render("index",{prods:""})
 });
 
 app.post('/',(req,res)=>{
@@ -44,7 +44,7 @@ app.get("/createproduct",(req,res)=>{
 });
 
 app.get('/updateproduct',(req,res)=>{
-    res.render("update",{products:""})
+    res.render("update",{prods:""})
 })
 
 app.get("/getproduct",getAllProduct);

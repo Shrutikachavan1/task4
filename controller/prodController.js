@@ -1,4 +1,3 @@
-// const { find } = require('../model/products');
 const productModel=require('../model/products')
 
 const createProduct= async(req,res)=>{
@@ -9,7 +8,7 @@ const createProduct= async(req,res)=>{
         if(err) console.log(err)
         else{
             res.redirect("/getproduct",201,{
-                products:" ",
+                prods:" ",
             })
         }
     })
@@ -21,7 +20,7 @@ const getAllProduct= (req,res)=>{
         if(err){
             res.send("Can't Find Product")
         } else{
-            res.render("seeProducts",{products:data});
+            res.render("seeProducts",{prods:data});
         }
     })
 }
@@ -45,7 +44,7 @@ const updateProductById=async(req,res)=>{
     productModel.updateOne({_id:productid},{$set:updateData},(err)=>{
         if (err) console.log(err)
         else{
-            res.render("/getproduct",200,{products:" "})
+            res.render("/getproduct",200,{prods:" "})
         }
     })
 }

@@ -13,12 +13,12 @@
         <% for(let p of prods) {%>
   
         <div class="card g-2 g-lg-3 px-2" style="width: 18rem">
-          <img class="card-img-top" src="<%= p.img%>" alt="Card image cap" />
+          <img class="card-img-top" src="<%= p.Image%>" alt="Card image cap" />
           <div class="card-body">
-            <h5 class="card-title"><%= p.name%></h5>
-            <p class="card-text">₹ <%= p.quantity%></p>
-            <p class="card-text">₹ <%= p.price%></p>
-            <p class="card-text"><%= p.description%></p>
+            <h5 class="card-title"><%= p.pname%></h5>
+            <p class="card-text">₹ <%= p.Price%></p>
+            <p class="card-text">₹ <%= p.Quantity%></p>
+            <p class="card-text"><%= p.Description%></p>
             <a href="/updateproduct" class="btn btn-primary"
               >edit</a>
             <a href="/delete/<%=p._id %>" class="btn btn-primary">delete</a>
